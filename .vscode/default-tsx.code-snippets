@@ -1,0 +1,24 @@
+{
+  "default tsx": {
+		"prefix": "qdttsx",
+		"body": [
+			"import React from 'react';",
+      "import { styled } from 'linaria/react';",
+      "",
+      "type I${1:${TM_FILENAME_BASE}}Props = {}",
+      "",
+      "const Root = styled.div``;",
+      "",
+      "const ${1:${TM_FILENAME_BASE}}: React.FC<I${1:${TM_FILENAME_BASE}}Props> = ({}) => {",
+      "  return (",
+      "    <Root>",
+      "      $2",
+      "    </Root>",
+      "  );",
+      "};",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}};"
+		],
+		"description": "defalut tsx"
+	}
+}
