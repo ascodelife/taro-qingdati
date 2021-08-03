@@ -19,8 +19,8 @@ const config = {
   },
   framework: 'react',
   alias: {
-    '@/components': path.resolve(__dirname, '../src/components'),
-    '@/pages': path.resolve(__dirname, '../src/pages'),
+    '@/components': path.resolve(__dirname, '..', 'src/components'),
+    '@/pages': path.resolve(__dirname, '..','src/pages'),
   },
   mini: {
     postcss: {
