@@ -1,17 +1,31 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { styled } from 'linaria/react';
-import TabBar from '@/components/TabBar';
+import BasicLayout from '@/components/BasicLayout';
+import useLoading from '@/utils/hooks/useLoading';
+import { LoadingContext } from '@/components/LoadingContext';
 
-type IHomeProps = {};
+type IHomeProps = {
+  className?: string;
+  style?: React.CSSProperties;
+};
 
 const Root = styled.div``;
 
-const Home: React.FC<IHomeProps> = ({}) => {
+const Home: React.FC<IHomeProps> = ({ className, style }) => {
+  const { loading, setLoading, push } = useLoading();
+  useEffect(() => {
+    push(new Promise(resolve=>{
+      setTimeout(resolve,10000);
+    }));
+  }, [push]);
   return (
-    <Root>
-      主页
-      <TabBar />
-    </Root>
+    <LoadingContext.Provider value={{ loading, push }}>
+      <BasicLayout showTabBar loading={loading} setLoading={setLoading}>
+        <Root className={className} style={style}>
+          主页
+        </Root>
+      </BasicLayout>
+    </LoadingContext.Provider>
   );
 };
 
