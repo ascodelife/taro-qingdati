@@ -4,6 +4,7 @@
     "react/jsx-uses-react": "off",
     "react/react-in-jsx-scope": "off",
     "import/no-commonjs": "off",
-    "semi": "error"
+    "semi": "error",
+    "react/self-closing-comp": ["error"]
   }
 }
