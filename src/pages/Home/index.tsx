@@ -3,6 +3,9 @@ import { styled } from 'linaria/react';
 import BasicLayout from '@/components/BasicLayout';
 import useLoading from '@/utils/hooks/useLoading';
 import { LoadingContext } from '@/components/LoadingContext';
+import usePageShow from '@/pages/common/usePageShow';
+
+const path = "/pages/Home/index";
 
 type IHomeProps = {
   className?: string;
@@ -13,14 +16,23 @@ const Root = styled.div``;
 
 const Home: React.FC<IHomeProps> = ({ className, style }) => {
   const { loading, setLoading, push } = useLoading();
+  usePageShow(path);
+
   useEffect(() => {
-    push(new Promise(resolve=>{
-      setTimeout(resolve,10000);
-    }));
+    push(
+      new Promise((resolve) => {
+        setTimeout(resolve, 300);
+      })
+    );
+    push(
+      new Promise((resolve) => {
+        setTimeout(resolve, 1000);
+      })
+    );
   }, [push]);
   return (
     <LoadingContext.Provider value={{ loading, push }}>
-      <BasicLayout showTabBar loading={loading} setLoading={setLoading}>
+      <BasicLayout loading={loading} setLoading={setLoading}>
         <Root className={className} style={style}>
           主页
         </Root>
