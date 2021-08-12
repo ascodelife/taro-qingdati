@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { styled } from 'linaria/react';
 import BasicLayout from '@/components/BasicLayout';
-import useLoading from '@/utils/hooks/useLoading';
+import useLoading from '@/pages/common/useLoading';
 import { LoadingContext } from '@/components/LoadingContext';
 import usePageShow from '@/pages/common/usePageShow';
 

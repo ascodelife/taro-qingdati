@@ -1,13 +1,22 @@
-@import "~taro-ui/dist/style/components/icon.scss";
 .tabbar {
   display: flex;
   padding: 0.256rem 0 0.128rem;
   text-align: center;
+  background: #f7f7f7;
   .tabbar__item {
     flex: 1;
     padding: .256rem;
+    color: #333;
+    font-size: 0.8rem;
   }
   .tabbar__item--active {
+    color: #6190e8;
+  }
+  .tabbar__item__image {
+    width: 1rem;
+    height: 1rem;
+    padding: 0.1rem;
+    margin: auto;
     color: #6190e8;
   }
 }

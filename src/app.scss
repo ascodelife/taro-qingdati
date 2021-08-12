@@ -1,2 +1,17 @@
-@import "~taro-ui/dist/style/components/toast.scss";
+@import '~taro-ui/dist/style/components/toast.scss';
 @import '~taro-ui/dist/style/components/icon.scss';
+
+page {
+  // 背景色
+  --page-bg-color: #ededed;
+  // 底部导航栏背景色
+  --tabbar-bg-color: #f7f7f7;
+  // 字体颜色
+  --font-color: rgba(0, 0, 0, 0.9);
+  // 主色
+  --primary-color: #6867ee;
+  // 辅色
+  --secondary-color: #697ff2;
+  background-color: var(--page-bg-color);
+  color: var(--font-color);
+}

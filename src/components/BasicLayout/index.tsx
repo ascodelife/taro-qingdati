@@ -4,6 +4,11 @@
  */
 import React from 'react';
 import LoadingToast from '@/components/LoadingToast';
+import { styled } from 'linaria/react';
+
+const Root = styled.div`
+  min-height: 100vh;
+`;
 
 type IBasicLayoutProps = {
   loading: boolean;
@@ -16,10 +21,10 @@ const BasicLayout: React.FC<IBasicLayoutProps> = ({
   children,
 }) => {
   return (
-    <>
+    <Root>
       {children}
       <LoadingToast loading={loading} setLoading={setLoading} />
-    </>
+    </Root>
   );
 };
 
