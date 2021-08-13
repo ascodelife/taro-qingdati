@@ -19,11 +19,11 @@ const config = {
   },
   framework: 'react',
   alias: {
-    '@': path.resolve(__dirname, '..','src'),
+    '@': path.resolve(__dirname, '..', 'src'),
     '@/components': path.resolve(__dirname, '..', 'src/components'),
-    '@/pages': path.resolve(__dirname, '..','src/pages'),
-    '@/utils': path.resolve(__dirname, '..','src/utils'),
-    '@/apis': path.resolve(__dirname, '..','src/apis'),
+    '@/pages': path.resolve(__dirname, '..', 'src/pages'),
+    '@/utils': path.resolve(__dirname, '..', 'src/utils'),
+    '@/apis': path.resolve(__dirname, '..', 'src/apis'),
   },
   mini: {
     postcss: {
@@ -83,6 +83,21 @@ const config = {
         });
     },
     esnextModules: ['taro-ui'],
+  },
+  copy: {
+    patterns: [
+      { from: 'src/components/vant-weapp/wxs', to: 'dist/components/vant-weapp/wxs' },
+      {
+        from: 'src/components/vant-weapp/common/style',
+        to: 'dist/components/vant-weapp/common/style',
+      },
+      {
+        from: 'src/components/vant-weapp/common/index.wxss',
+        to: 'dist/components/vant-weapp/common/index.wxss',
+      },
+      { from: 'src/components/vant-weapp/*', to: 'dist/components/vant-weapp/*' },
+    ],
+    options: {},
   },
 };
 
