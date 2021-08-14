@@ -96,9 +96,7 @@ VantComponent({
           const LinearColor = context.createLinearGradient(size, 0, 0, 0);
           Object.keys(color)
             .sort((a, b) => parseFloat(a) - parseFloat(b))
-            .map((key) =>
-              LinearColor.addColorStop(parseFloat(key) / 100, color[key])
-            );
+            .map((key) => LinearColor.addColorStop(parseFloat(key) / 100, color[key]));
           this.hoverColor = LinearColor;
         });
       }
@@ -128,9 +126,7 @@ VantComponent({
       const { clockwise } = this.data;
       // 结束角度
       const progress = PERIMETER * (formatValue / 100);
-      const endAngle = clockwise
-        ? BEGIN_ANGLE + progress
-        : 3 * Math.PI - (BEGIN_ANGLE + progress);
+      const endAngle = clockwise ? BEGIN_ANGLE + progress : 3 * Math.PI - (BEGIN_ANGLE + progress);
       this.presetCanvas(context, this.hoverColor, BEGIN_ANGLE, endAngle);
     },
     drawCircle(currentValue) {
@@ -152,24 +148,28 @@ VantComponent({
         this.drawCircle(value);
         return;
       }
-      this.clearInterval();
+      this.clearMockInterval();
       this.currentValue = this.currentValue || 0;
-      this.interval = setInterval(() => {
-        if (this.currentValue !== value) {
-          if (this.currentValue < value) {
-            this.currentValue += STEP;
+      const run = () => {
+        this.interval = setTimeout(() => {
+          if (this.currentValue !== value) {
+            if (this.currentValue < value) {
+              this.currentValue += STEP;
+            } else {
+              this.currentValue -= STEP;
+            }
+            this.drawCircle(this.currentValue);
+            run();
           } else {
-            this.currentValue -= STEP;
+            this.clearMockInterval();
           }
-          this.drawCircle(this.currentValue);
-        } else {
-          this.clearInterval();
-        }
-      }, 1000 / speed);
+        }, 1000 / speed);
+      };
+      run();
     },
-    clearInterval() {
+    clearMockInterval() {
       if (this.interval) {
-        clearInterval(this.interval);
+        clearTimeout(this.interval);
         this.interval = null;
       }
     },
@@ -181,6 +181,6 @@ VantComponent({
     });
   },
   destroyed() {
-    this.clearInterval();
+    this.clearMockInterval();
   },
 });

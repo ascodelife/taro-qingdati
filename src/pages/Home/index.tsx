@@ -4,8 +4,10 @@ import BasicLayout from '@/components/BasicLayout';
 import useLoading from '@/pages/common/useLoading';
 import { LoadingContext } from '@/components/LoadingContext';
 import usePageShow from '@/pages/common/usePageShow';
+import MarkTitle from '@/components/MarkTitle';
+import HeadCard from './components/HeadCard';
 
-const path = "/pages/Home/index";
+const path = '/pages/Home/index';
 
 type IHomeProps = {
   className?: string;
@@ -34,7 +36,8 @@ const Home: React.FC<IHomeProps> = ({ className, style }) => {
     <LoadingContext.Provider value={{ loading, push }}>
       <BasicLayout loading={loading} setLoading={setLoading}>
         <Root className={className} style={style}>
-          主页
+          {/* <MarkTitle title="主页" /> */}
+          <HeadCard />
         </Root>
       </BasicLayout>
     </LoadingContext.Provider>

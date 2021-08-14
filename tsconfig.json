@@ -28,6 +28,6 @@
       "@/apis/*": ["./src/apis/*"]
     }
   },
-  "exclude": ["node_modules", "dist"],
+  "exclude": ["node_modules", "dist","./src/components/vant-weapp/*"],
   "compileOnSave": false
 }
