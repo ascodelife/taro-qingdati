@@ -33,6 +33,9 @@ const config = {
     '@/pages': path.resolve(__dirname, '..', 'src/pages'),
     '@/utils': path.resolve(__dirname, '..', 'src/utils'),
     '@/apis': path.resolve(__dirname, '..', 'src/apis'),
+    '@/constants': path.resolve(__dirname, '..', 'src/constants'),
+    '@/typings': path.resolve(__dirname, '..', 'src/typings'),
+    '@/storage': path.resolve(__dirname, '..', 'src/storage'),
   },
   mini: {
     postcss: {

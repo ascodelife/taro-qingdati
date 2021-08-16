@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import { styled } from 'linaria/react';
 import fePng from '@/assets/img/fe.png';
 import bePng from '@/assets/img/be.png';
 import { Picker } from '@tarojs/components';
-
-const range = ['前端工程师', '后端工程师'];
+import { UserDataContext } from '@/components/Context';
+import { UserRole } from '@/constants/UserData';
 
 type ISelectProps = {
   className?: string;
@@ -32,14 +32,26 @@ const Root = styled.div`
   }
 `;
 
+const range = [UserRole.fe, UserRole.be];
+
 const Select: React.FC<ISelectProps> = ({}) => {
-  const [value, setValue] = useState('0');
+  const { userData, setUserData } = useContext(UserDataContext);
+
+  function handleChange(value: UserRole) {
+    setUserData((darft) => {
+      darft.role = value;
+    });
+  }
 
   return (
-    <Picker mode="selector" range={range} onChange={(e) => setValue(e.detail.value as string)}>
+    <Picker
+      mode="selector"
+      range={range}
+      onChange={(e) => handleChange(e.detail.value as UserRole)}
+    >
       <Root>
-        <img width="20px" height="20px" src={value === '0' ? fePng : bePng} />
-        <span className="selector__text"> {range[value]}</span>
+        <img width="20px" height="20px" src={userData.role === UserRole.fe ? fePng : bePng} />
+        <span className="selector__text"> {userData.role}</span>
       </Root>
     </Picker>
   );

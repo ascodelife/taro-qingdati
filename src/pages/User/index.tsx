@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { styled } from 'linaria/react';
 import BasicLayout from '@/components/BasicLayout';
-import useLoading from '@/pages/common/useLoading';
-import { LoadingContext } from '@/components/LoadingContext';
+import { LoadingContext } from '@/components/Context';
 import usePageShow from '@/pages/common/usePageShow';
 
 
@@ -16,7 +15,7 @@ type IUserProps = {
 const Root = styled.div``;
 
 const User: React.FC<IUserProps> = ({ className, style }) => {
-  const { loading, setLoading, push } = useLoading();
+  const { push, loading, setLoading } = useContext(LoadingContext);
 
   usePageShow(path);
 
@@ -33,13 +32,11 @@ const User: React.FC<IUserProps> = ({ className, style }) => {
     );
   }, [push]);
   return (
-    <LoadingContext.Provider value={{ loading, push }}>
-      <BasicLayout loading={loading} setLoading={setLoading}>
-        <Root className={className} style={style}>
-          用户
-        </Root>
-      </BasicLayout>
-    </LoadingContext.Provider>
+    <BasicLayout loading={loading} setLoading={setLoading}>
+      <Root className={className} style={style}>
+        用户
+      </Root>
+    </BasicLayout>
   );
 };
 

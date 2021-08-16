@@ -1,9 +1,9 @@
-import { GlobalContext } from '@/GlobalContext';
+import { TabbarContext } from '@/components/Context';
 import { useDidShow } from '@tarojs/taro';
 import { useContext } from 'react';
 
 const usePageShow = (path: string) => {
-  const { setTabPath } = useContext(GlobalContext);
+  const { setTabPath } = useContext(TabbarContext);
   useDidShow(() => {
     setTabPath(path);
   });

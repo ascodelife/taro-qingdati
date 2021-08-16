@@ -25,7 +25,10 @@
       "@/components/*": ["./src/components/*"],
       "@/pages/*": ["./src/pages/*"],
       "@/utils/*": ["./src/utils/*"],
-      "@/apis/*": ["./src/apis/*"]
+      "@/apis/*": ["./src/apis/*"],
+      "@/constants/*": ["./src/constants/*"],
+      "@/typings/*": ["src/typings/*"],
+      "@/storage/*": ["./src/storage/*"],
     }
   },
   "exclude": ["node_modules", "dist","./src/components/vant-weapp/*"],

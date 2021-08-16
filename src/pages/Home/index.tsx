@@ -1,10 +1,8 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { styled } from 'linaria/react';
 import BasicLayout from '@/components/BasicLayout';
-import useLoading from '@/pages/common/useLoading';
-import { LoadingContext } from '@/components/LoadingContext';
+import { LoadingContext } from '@/components/Context';
 import usePageShow from '@/pages/common/usePageShow';
-import MarkTitle from '@/components/MarkTitle';
 import HeadCard from './components/HeadCard';
 
 const path = '/pages/Home/index';
@@ -17,7 +15,8 @@ type IHomeProps = {
 const Root = styled.div``;
 
 const Home: React.FC<IHomeProps> = ({ className, style }) => {
-  const { loading, setLoading, push } = useLoading();
+  const { push, loading, setLoading } = useContext(LoadingContext);
+
   usePageShow(path);
 
   useEffect(() => {
@@ -33,14 +32,11 @@ const Home: React.FC<IHomeProps> = ({ className, style }) => {
     );
   }, [push]);
   return (
-    <LoadingContext.Provider value={{ loading, push }}>
-      <BasicLayout loading={loading} setLoading={setLoading}>
-        <Root className={className} style={style}>
-          {/* <MarkTitle title="主页" /> */}
-          <HeadCard />
-        </Root>
-      </BasicLayout>
-    </LoadingContext.Provider>
+    <BasicLayout loading={loading} setLoading={setLoading}>
+      <Root className={className} style={style}>
+        <HeadCard />
+      </Root>
+    </BasicLayout>
   );
 };
 

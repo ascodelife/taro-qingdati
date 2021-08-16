@@ -1,8 +1,8 @@
-import { useEffect, useContext } from 'react';
+import { useContext } from 'react';
 import Taro from '@tarojs/taro';
 import { CoverImage, CoverView } from '@tarojs/components';
 import clx from 'classnames';
-import { GlobalContext } from '@/GlobalContext';
+import { TabbarContext } from '@/components/Context';
 import homePng from '@/assets/icon/home.png';
 import homeActivePng from '@/assets/icon/home-active.png';
 import searchPng from '@/assets/icon/search.png';
@@ -42,7 +42,7 @@ const switchTo = (path) => () => {
 };
 
 const CustomTabbar = () => {
-  const { tabPath, setTabPath } = useContext(GlobalContext);
+  const { tabPath, setTabPath } = useContext(TabbarContext);
   //@ts-ignore
   wx.onAppRoute(function (res) {
     setTabPath(res.path);
