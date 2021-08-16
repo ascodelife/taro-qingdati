@@ -37,18 +37,15 @@ const range = [UserRole.fe, UserRole.be];
 const Select: React.FC<ISelectProps> = ({}) => {
   const { userData, setUserData } = useContext(UserDataContext);
 
-  function handleChange(value: UserRole) {
+  function handleChange(value:UserRole) {
+    console.log(value);
     setUserData((darft) => {
       darft.role = value;
     });
   }
 
   return (
-    <Picker
-      mode="selector"
-      range={range}
-      onChange={(e) => handleChange(e.detail.value as UserRole)}
-    >
+    <Picker mode="selector" range={range} onChange={(e) => handleChange(range[e.detail.value])}>
       <Root>
         <img width="20px" height="20px" src={userData.role === UserRole.fe ? fePng : bePng} />
         <span className="selector__text"> {userData.role}</span>

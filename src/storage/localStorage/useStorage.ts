@@ -11,13 +11,14 @@ const useStorage = <T>({
   key,
   initData,
 }: IUseStorageProps<T>): [T, (fn: (draft: T) => void) => void, () => void] => {
-  const [data, setData] = useState(getStorageSync<T>(key) ?? initData);
+  const [data, setData] = useState(getStorageSync<T>(key) || initData);
 
   useEffect(() => {
     setStorageSync(key, data);
   }, [data, key]);
 
   const _setData = (fn: (draft: T) => void) => {
+    console.log(data);
     setData(produce(data, fn));
   };
 

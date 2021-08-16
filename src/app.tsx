@@ -13,7 +13,7 @@ import './app.scss';
 type IAppProps = {};
 
 const App: React.FC<IAppProps> = ({ children }) => {
-  const [tabPath, setTabPath] = useState(Taro.getCurrentInstance().router?.path ?? '');
+  const [tabPath, setTabPath] = useState(Taro.getCurrentInstance().router?.path || '');
   const { loading, setLoading, push } = useLoading();
   const [userData, setUserData, clear] = useStorage<IUserData>({
     key: localStorage.UserData as string,
