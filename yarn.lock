@@ -1287,6 +1287,18 @@
   dependencies:
     "@tarojs/shared" "3.3.1"
 
+"@tarojs/plugin-mock@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.nlark.com/@tarojs/plugin-mock/download/@tarojs/plugin-mock-0.0.7.tgz#e41aee3e054cef9c577065b597514c6be5fe0c6b"
+  integrity sha1-5BruPgVM75xXcGW1l1FMa+X+DGs=
+  dependencies:
+    body-parser "^1.19.0"
+    express "^4.17.1"
+    get-port "^5.1.1"
+    glob "^7.1.6"
+    http-proxy-middleware "^1.0.3"
+    path-to-regexp "^6.1.0"
+
 "@tarojs/plugin-platform-alipay@3.3.1":
   version "3.3.1"
   resolved "https://registry.nlark.com/@tarojs/plugin-platform-alipay/download/@tarojs/plugin-platform-alipay-3.3.1.tgz?cache=0&sync_timestamp=1626924053421&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40tarojs%2Fplugin-platform-alipay%2Fdownload%2F%40tarojs%2Fplugin-platform-alipay-3.3.1.tgz#00a0920550d471d7fec3b6bfdf286daf7ae9247a"
@@ -1502,6 +1514,13 @@
   integrity sha1-6lniHS7lxReRTLS8jkFTuZ5WZnI=
   dependencies:
     "@types/minimatch" "*"
+    "@types/node" "*"
+
+"@types/http-proxy@^1.17.5":
+  version "1.17.7"
+  resolved "https://registry.nlark.com/@types/http-proxy/download/@types/http-proxy-1.17.7.tgz#30ea85cc2c868368352a37f0d0d3581e24834c6f"
+  integrity sha1-MOqFzCyGg2g1Kjfw0NNYHiSDTG8=
+  dependencies:
     "@types/node" "*"
 
 "@types/json-schema@^7.0.5", "@types/json-schema@^7.0.7", "@types/json-schema@^7.0.8":
@@ -2491,7 +2510,7 @@ bn.js@^5.0.0, bn.js@^5.1.1:
   resolved "https://registry.npm.taobao.org/bn.js/download/bn.js-5.2.0.tgz#358860674396c6997771a9d051fcc1b57d4ae002"
   integrity sha1-NYhgZ0OWxpl3canQUfzBtX1K4AI=
 
-body-parser@1.19.0:
+body-parser@1.19.0, body-parser@^1.19.0:
   version "1.19.0"
   resolved "https://registry.npm.taobao.org/body-parser/download/body-parser-1.19.0.tgz#96b2709e57c9c4e09a6fd66a8fd979844f69f08a"
   integrity sha1-lrJwnlfJxOCab9Zqj9l5hE9p8Io=
@@ -3119,6 +3138,11 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   integrity sha1-w9RaizT9cwYxoRCoolIGgrMdWn8=
   dependencies:
     delayed-stream "~1.0.0"
+
+commander@*:
+  version "8.1.0"
+  resolved "https://registry.nlark.com/commander/download/commander-8.1.0.tgz?cache=0&sync_timestamp=1627358203890&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fcommander%2Fdownload%2Fcommander-8.1.0.tgz#db36e3e66edf24ff591d639862c6ab2c52664362"
+  integrity sha1-2zbj5m7fJP9ZHWOYYsarLFJmQ2I=
 
 commander@2.17.x:
   version "2.17.1"
@@ -4869,6 +4893,11 @@ get-intrinsic@^1.0.2, get-intrinsic@^1.1.0, get-intrinsic@^1.1.1:
     has "^1.0.3"
     has-symbols "^1.0.1"
 
+get-port@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.nlark.com/get-port/download/get-port-5.1.1.tgz?cache=0&sync_timestamp=1624608103389&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fget-port%2Fdownload%2Fget-port-5.1.1.tgz#0469ed07563479de6efb986baf053dcd7d4e3193"
+  integrity sha1-BGntB1Y0ed5u+5hrrwU9zX1OMZM=
+
 get-stdin@^6.0.0:
   version "6.0.0"
   resolved "https://registry.nlark.com/get-stdin/download/get-stdin-6.0.0.tgz#9e09bf712b360ab9225e812048f71fde9c89657b"
@@ -5309,7 +5338,18 @@ http-proxy-middleware@0.19.1:
     lodash "^4.17.11"
     micromatch "^3.1.10"
 
-http-proxy@^1.17.0:
+http-proxy-middleware@^1.0.3:
+  version "1.3.1"
+  resolved "https://registry.nlark.com/http-proxy-middleware/download/http-proxy-middleware-1.3.1.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fhttp-proxy-middleware%2Fdownload%2Fhttp-proxy-middleware-1.3.1.tgz#43700d6d9eecb7419bf086a128d0f7205d9eb665"
+  integrity sha1-Q3ANbZ7st0Gb8IahKND3IF2etmU=
+  dependencies:
+    "@types/http-proxy" "^1.17.5"
+    http-proxy "^1.18.1"
+    is-glob "^4.0.1"
+    is-plain-obj "^3.0.0"
+    micromatch "^4.0.2"
+
+http-proxy@^1.17.0, http-proxy@^1.18.1:
   version "1.18.1"
   resolved "https://registry.nlark.com/http-proxy/download/http-proxy-1.18.1.tgz#401541f0534884bbf95260334e72f88ee3976549"
   integrity sha1-QBVB8FNIhLv5UmAzTnL4juOXZUk=
@@ -5800,6 +5840,11 @@ is-plain-obj@^1.0.0, is-plain-obj@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/is-plain-obj/download/is-plain-obj-1.1.0.tgz?cache=0&sync_timestamp=1618600554597&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-plain-obj%2Fdownload%2Fis-plain-obj-1.1.0.tgz#71a50c8429dfca773c92a390a4a03b39fcd51d3e"
   integrity sha1-caUMhCnfync8kqOQpKA7OfzVHT4=
+
+is-plain-obj@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npm.taobao.org/is-plain-obj/download/is-plain-obj-3.0.0.tgz?cache=0&sync_timestamp=1618600554597&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fis-plain-obj%2Fdownload%2Fis-plain-obj-3.0.0.tgz#af6f2ea14ac5a646183a5bbdb5baabbc156ad9d7"
+  integrity sha1-r28uoUrFpkYYOlu9tbqrvBVq2dc=
 
 is-plain-object@^2.0.3, is-plain-object@^2.0.4:
   version "2.0.4"
@@ -6814,6 +6859,13 @@ mobile-detect@^1.4.2:
   resolved "https://registry.npm.taobao.org/mobile-detect/download/mobile-detect-1.4.5.tgz#da393c3c413ca1a9bcdd9ced653c38281c0fb6ad"
   integrity sha1-2jk8PEE8oam83ZztZTw4KBwPtq0=
 
+mockjs@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.nlark.com/mockjs/download/mockjs-1.1.0.tgz#e6a0c378e91906dbaff20911cc0273b3c7d75b06"
+  integrity sha1-5qDDeOkZBtuv8gkRzAJzs8fXWwY=
+  dependencies:
+    commander "*"
+
 move-concurrently@^1.0.1:
   version "1.0.1"
   resolved "https://registry.nlark.com/move-concurrently/download/move-concurrently-1.0.1.tgz#be2c005fda32e0b29af1f05d7c4b33214c701f92"
@@ -7499,6 +7551,11 @@ path-to-regexp@^3.1.0:
   version "3.2.0"
   resolved "https://registry.nlark.com/path-to-regexp/download/path-to-regexp-3.2.0.tgz?cache=0&sync_timestamp=1624608046390&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-to-regexp%2Fdownload%2Fpath-to-regexp-3.2.0.tgz#fa7877ecbc495c601907562222453c43cc204a5f"
   integrity sha1-+nh37LxJXGAZB1YiIkU8Q8wgSl8=
+
+path-to-regexp@^6.1.0:
+  version "6.2.0"
+  resolved "https://registry.nlark.com/path-to-regexp/download/path-to-regexp-6.2.0.tgz?cache=0&sync_timestamp=1624608046390&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fpath-to-regexp%2Fdownload%2Fpath-to-regexp-6.2.0.tgz#f7b3803336104c346889adece614669230645f38"
+  integrity sha1-97OAMzYQTDRoia3s5hRmkjBkXzg=
 
 path-type@^3.0.0:
   version "3.0.0"
