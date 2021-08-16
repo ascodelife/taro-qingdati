@@ -37,7 +37,7 @@ const range = [UserRole.fe, UserRole.be];
 const Select: React.FC<ISelectProps> = ({}) => {
   const { userData, setUserData } = useContext(UserDataContext);
 
-  function handleChange(value:UserRole) {
+  function handleChange(value: UserRole) {
     console.log(value);
     setUserData((darft) => {
       darft.role = value;
