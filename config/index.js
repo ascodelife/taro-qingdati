@@ -1,4 +1,5 @@
 const path = require('path');
+const mocks = require('../src/mocks/api');
 
 const config = {
   projectName: 'taro-qingdati',
@@ -11,7 +12,15 @@ const config = {
   },
   sourceRoot: 'src',
   outputRoot: 'dist',
-  plugins: ['@tarojs/plugin-html'],
+  plugins: [
+    '@tarojs/plugin-html',
+    [
+      '@tarojs/plugin-mock',
+      {
+        mocks
+      },
+    ],
+  ],
   defineConstants: {},
   copy: {
     patterns: [],
