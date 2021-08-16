@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { styled } from 'linaria/react';
 import Cart from '@/components/Cart';
 import bookPng from '@/assets/icon/book.png';
+import { UserDataContext } from '@/components/Context';
+import { CategoriesLv1, UserRole } from '@/constants/UserData';
 import TagItem from './TagItem';
 
 type ILearningCardProps = {
@@ -44,6 +46,8 @@ const contentStyle: React.CSSProperties = {
 };
 
 const LearningCard: React.FC<ILearningCardProps> = ({ className, style, value }) => {
+  const { userData } = useContext(UserDataContext);
+
   return (
     <Root className={className} style={style} contentStyle={contentStyle}>
       <div className="card__content">
@@ -52,8 +56,13 @@ const LearningCard: React.FC<ILearningCardProps> = ({ className, style, value })
           <span className="card__header__text">刷题进度</span>
         </div>
         <div className="card__content__tagbar">
-          <TagItem name="前端方向" cur={100} total={200} />
-          <TagItem name="计算机基础" cur={100} total={200} />
+          {userData.role === UserRole.fe ? (
+            <TagItem name={CategoriesLv1.fe} cur={userData.done[CategoriesLv1.fe]} total={200} />
+          ) : (
+            <TagItem name={CategoriesLv1.be} cur={userData.done[CategoriesLv1.be]} total={200} />
+          )}
+
+          <TagItem name="计算机基础" cur={userData.done[CategoriesLv1.cb]} total={200} />
         </div>
       </div>
       <div className="card__circle">

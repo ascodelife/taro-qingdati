@@ -38,7 +38,6 @@ const Select: React.FC<ISelectProps> = ({}) => {
   const { userData, setUserData } = useContext(UserDataContext);
 
   function handleChange(value: UserRole) {
-    console.log(value);
     setUserData((darft) => {
       darft.role = value;
     });
