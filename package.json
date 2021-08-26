@@ -41,6 +41,7 @@
     "@tarojs/react": "3.3.1",
     "@tarojs/runtime": "3.3.1",
     "@tarojs/taro": "3.3.1",
+    "ahooks": "^2.10.9",
     "immer": "^9.0.5",
     "linaria": "^2.1.0",
     "react": "^17.0.0",

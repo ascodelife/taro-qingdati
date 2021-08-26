@@ -11,6 +11,7 @@ class PromiseManager {
     return `${new Date().getTime()}-${Math.floor(Math.random() * 1000)}`;
   }
   push = (...promises: Promise<any>[]) => {
+    console.log('入队',...promises);
     for (const p of promises) {
       const key = this.generateKey();
       this.pendingPromise.add(key);

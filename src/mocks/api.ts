@@ -1,7 +1,7 @@
+const { getQVData } = require('./getQVData');
+
 module.exports = {
-  'GET /api/user/1': {
-    name: 'luckyadam',
-  },
+  'GET /api/getQV': getQVData,
 
   'POST /api/upload': {
     file: 'xxxx',

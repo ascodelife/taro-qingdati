@@ -3,6 +3,7 @@ import { styled } from 'linaria/react';
 import BasicLayout from '@/components/BasicLayout';
 import { LoadingContext } from '@/components/Context';
 import usePageShow from '@/pages/common/usePageShow';
+import UpdateDialog from '@/components/UpdateDialog';
 import HeadCard from './components/HeadCard';
 
 const path = '/pages/Home/index';
@@ -35,6 +36,7 @@ const Home: React.FC<IHomeProps> = ({ className, style }) => {
     <BasicLayout loading={loading} setLoading={setLoading}>
       <Root className={className} style={style}>
         <HeadCard />
+        <UpdateDialog />
       </Root>
     </BasicLayout>
   );

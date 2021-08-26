@@ -7,10 +7,9 @@ type IUseStorageProps<T> = {
   initData: T;
 };
 
-const useStorage = <T>({
-  key,
-  initData,
-}: IUseStorageProps<T>): [T, (fn: (draft: T) => void) => void, () => void] => {
+export type UseStorageReturnType<T> = [T, (fn: (draft: T) => void) => void, () => void];
+
+const useStorage = <T>({ key, initData }: IUseStorageProps<T>): UseStorageReturnType<T> => {
   const [data, setData] = useState(getStorageSync<T>(key) || initData);
 
   useEffect(() => {

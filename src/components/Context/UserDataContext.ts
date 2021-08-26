@@ -1,15 +1,6 @@
-import { IUserData } from '@/typings/IUserData';
-import { CategoriesLv1, UserRole } from '@/constants/UserData';
+import { initUserData } from '@/constants/Storage';
+import { IUserData } from '@/typings';
 import React from 'react';
-
-export const initUserData = {
-  role: UserRole.fe,
-  done: {
-    [CategoriesLv1.fe]: 0,
-    [CategoriesLv1.be]: 0,
-    [CategoriesLv1.cb]: 0,
-  },
-};
 
 type IUserDataContextProps = {
   userData: IUserData;

@@ -29,6 +29,7 @@
       "@/constants/*": ["./src/constants/*"],
       "@/typings/*": ["src/typings/*"],
       "@/storage/*": ["./src/storage/*"],
+      "@/common/*": ["./src/common/*"],
     }
   },
   "exclude": ["node_modules", "dist","./src/components/vant-weapp/*"],
